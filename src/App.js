@@ -1,39 +1,41 @@
 import React from 'react';
-import {fetchCharacters} from './services/fetchCharacters';
+import { fetchCharacters } from './services/fetchCharacters';
 import './App.css';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state= {
+    this.state = {
       characters: []
     }
     this.getCharacters = this.getCharacters.bind(this);
   }
-  componentDidMount (){
+  componentDidMount() {
     this.getCharacters();
   }
 
-  getCharacters () {
+  getCharacters() {
     fetchCharacters()
-    .then (data => {
-      this.setState({
-        characters: data.results
-      });
-    });
-  
+      .then(data => {
+        this.setState({
+          characters: data.results
+        });
+      })
   }
 
   render() {
-    const {characters} = this.state;
+    const { characters } = this.state;
     return (
       <div className="app">
+
         <ol className="main__list-characters">
-          {characters.map (item => {
+          {characters.map(item => {
             return (
               <li className="list__char" key={item.id}>
-              <div>{item.name}</div>
+                <div className="box__name">
+                  <h1 className="title__name">{item.name}</h1>
+                </div>
               </li>
             );
           })}
