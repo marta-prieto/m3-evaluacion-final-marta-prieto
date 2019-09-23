@@ -12,6 +12,7 @@ class App extends React.Component {
       queryData: ''
     }
     this.getCharacters = this.getCharacters.bind(this);
+    this.getQueryData= this.getQueryData.bind(this);
   }
   componentDidMount() {
     this.getCharacters();
@@ -34,13 +35,14 @@ class App extends React.Component {
   }
 
   render() {
-    const {characters, queryData, getQueryData} = this.state;
+    const {characters, queryData} = this.state;
     return (
+      <React.Fragment>
       <div className="app">
         <h1 className="main__title">Rick and Morty</h1>
         <Filters 
-            getQueryData={getQueryData}
-            queryData={queryData} 
+            getQueryData={this.getQueryData}
+            queryData={this.queryData}
             />
         <ol className="main__list-characters">
           {characters
@@ -58,6 +60,7 @@ class App extends React.Component {
           })}
         </ol>
       </div>
+      </React.Fragment>
     );
   }
 }
