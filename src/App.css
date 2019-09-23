@@ -1,4 +1,9 @@
 .app {
- 
+  background-color: black;
+ color: white;
+}
+
+.list__characters {
+  list-style: none;  
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { fetchCharacters } from './services/fetchCharacters';
+import Filters from './components/Filters';
 import './App.css';
 
 class App extends React.Component {
@@ -7,7 +8,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      characters: []
+      characters: [],
+      queryData: ''
     }
     this.getCharacters = this.getCharacters.bind(this);
   }
@@ -24,20 +26,32 @@ class App extends React.Component {
       })
   }
 
+  getQueryData(event) {
+    const queryData = event.currentTarget.value;
+    this.setState({
+      queryData: queryData
+    });
+  }
+
   render() {
-    const { characters } = this.state;
+    const {characters, queryData, getQueryData} = this.state;
     return (
       <div className="app">
         <h1 className="main__title">Rick and Morty</h1>
+        <Filters 
+            getQueryData={getQueryData}
+            queryData={queryData} 
+            />
         <ol className="main__list-characters">
-          {characters.map(item => {
+          {characters
+          .filter(filterChar => filterChar.name.toUpperCase().includes(queryData.toUpperCase()))
+          .map(item => {
             return (
-              <li className="list__char" key={item.id}>
+              <li className="list__characters" key={item.id}>             
                 <div className="box__name">
                   <div><img src={item.image} alt={item.name} /></div>
                   <h2 className="title__name">{item.name}</h2>
                   <h3 className="">{item.species}</h3>
-
                 </div>
               </li>
             );
