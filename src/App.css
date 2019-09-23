@@ -1,22 +1,17 @@
 .app {
   background-color: black;
- color: white;
+  color: white;
 }
 
 .list__characters {
-  list-style: none;  
+  list-style: none;
 }
 
 .main__title {
-  height: 1px;
-  overflow: hidden;
-}
-
-.logo__title {
   background-image: url(../src/logoRick.png);
   background-repeat: no-repeat;
   background-size: contain;
- 
- 
-
+  padding-top: 100px;
+  height: 1px;
+  overflow: hidden;
 }

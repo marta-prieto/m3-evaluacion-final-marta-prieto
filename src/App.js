@@ -42,7 +42,7 @@ class App extends React.Component {
       <React.Fragment>
         <div className="app">
           <h1 className="main__title">
-            <img className="logo__title" src={logo} alt="Rick and Morty"></img>
+           Rick and Morty
           </h1>
           <Filters
             getQueryData={this.getQueryData}
