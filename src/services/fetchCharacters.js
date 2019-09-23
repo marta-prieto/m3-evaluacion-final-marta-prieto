@@ -7,3 +7,6 @@ const fetchCharacters = () => {
 export { fetchCharacters };
 
 
+
+
+

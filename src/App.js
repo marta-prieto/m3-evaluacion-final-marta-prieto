@@ -1,11 +1,9 @@
 import React from 'react';
 import { fetchCharacters } from './services/fetchCharacters';
-import Home from './components/Home';
+import CharacterHome from './components/CharacterHome';
 import CharacterDetail from './components/CharacterDetail';
-/* import CharacterList from './components/CharacterList';
-import Filters from './components/Filters'; */
 import './App.css';
-import {Switch, Route} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -46,7 +44,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" render={() => {
             return (
-              <Home
+              <CharacterHome
                 getQueryData={this.getQueryData}
                 queryData={queryData}
                 characters={characters}
