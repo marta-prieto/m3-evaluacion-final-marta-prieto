@@ -1,5 +1,6 @@
 import React from 'react';
 import { fetchCharacters } from './services/fetchCharacters';
+import CharacterList from './components/CharacterList';
 import Filters from './components/Filters';
 import './App.css';
 
@@ -44,21 +45,10 @@ class App extends React.Component {
             getQueryData={this.getQueryData}
             queryData={this.queryData}
             />
-        <ol className="main__list-characters">
-          {characters
-          .filter(filterChar => filterChar.name.toUpperCase().includes(queryData.toUpperCase()))
-          .map(item => {
-            return (
-              <li className="list__characters" key={item.id}>             
-                <div className="box__name">
-                  <div><img src={item.image} alt={item.name} /></div>
-                  <h2 className="title__name">{item.name}</h2>
-                  <h3 className="">{item.species}</h3>
-                </div>
-              </li>
-            );
-          })}
-        </ol>
+        <CharacterList 
+         characters={characters}
+         queryData={queryData}
+        />
       </div>
       </React.Fragment>
     );
