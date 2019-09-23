@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Filters = props => {
-    const {getQueryData, queryData} = props;
+    const { getQueryData, queryData } = props;
     return (
         <div className="filters__list">
             <label>Busca a tu personaje: </label>
