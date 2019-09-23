@@ -28,13 +28,16 @@ class App extends React.Component {
     const { characters } = this.state;
     return (
       <div className="app">
-
+        <h1 className="main__title">Rick and Morty</h1>
         <ol className="main__list-characters">
           {characters.map(item => {
             return (
               <li className="list__char" key={item.id}>
                 <div className="box__name">
-                  <h1 className="title__name">{item.name}</h1>
+                  <div><img src={item.image} alt={item.name} /></div>
+                  <h2 className="title__name">{item.name}</h2>
+                  <h3 className="">{item.species}</h3>
+
                 </div>
               </li>
             );
