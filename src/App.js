@@ -1,9 +1,11 @@
 import React from 'react';
 import { fetchCharacters } from './services/fetchCharacters';
-import {logo} from './logoRick.png'
-import CharacterList from './components/CharacterList';
-import Filters from './components/Filters';
+import Home from './components/Home';
+import CharacterDetail from './components/CharacterDetail';
+/* import CharacterList from './components/CharacterList';
+import Filters from './components/Filters'; */
 import './App.css';
+import {Switch, Route} from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -39,21 +41,30 @@ class App extends React.Component {
   render() {
     const { characters, queryData } = this.state;
     return (
-      <React.Fragment>
-        <div className="app">
-          <h1 className="main__title">
-           Rick and Morty
-          </h1>
-          <Filters
-            getQueryData={this.getQueryData}
-            queryData={this.queryData}
-          />
-          <CharacterList
-            characters={characters}
-            queryData={queryData}
-          />
-        </div>
-      </React.Fragment>
+      <div className="app">
+        <h1 className="main__title">Rick and Morty</h1>
+        <Switch>
+          <Route exact path="/" render={() => {
+            return (
+              <Home
+                getQueryData={this.getQueryData}
+                queryData={queryData}
+                characters={characters}
+              />
+            );
+          }} />
+          <Route path="/Char-detail" render={routerProps => {
+            return (
+              <CharacterDetail
+                routerProps={routerProps}
+                characters={characters}
+              />
+            );
+          }} />
+        </Switch>
+      </div>
+
+
     );
   }
 }
