@@ -51,7 +51,7 @@ class App extends React.Component {
               />
             );
           }} />
-          <Route path="/Char-detail/:id" render={routerProps => {
+          <Route path="/Char-detail/:charId" render={routerProps => {
             return (
               <CharacterDetail
                 routerProps={routerProps}
