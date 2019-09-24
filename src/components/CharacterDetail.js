@@ -17,9 +17,9 @@ const CharacterDetail = props => {
     );
 }
 
-  const character = characters.filter(item => item.id === charId);
-  if (character[0]){
-  const {name, image, species, origin, episode, status} = character[0];
+  const getMyCharacter = characters.filter(item => item.id === charId);
+  if (getMyCharacter[0]){
+  const {name, image, species, origin, episode, status} = getMyCharacter[0];
   return(
     <React.Fragment>
       <div className="detail__card">
