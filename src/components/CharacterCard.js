@@ -7,7 +7,7 @@ const CharacterCard = props => {
     <div className="box__name">
       <div><img src={image} alt={`Foto de${name}`} /></div>
       <h2 className="title__name">{name}</h2>
-      <h3 className="">{species}</h3>
+      <h3 className="subtitle__name">{species}</h3>
     </div>
   );
 };

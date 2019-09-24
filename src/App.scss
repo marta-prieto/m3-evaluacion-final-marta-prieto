@@ -1,17 +1,17 @@
+body {
+  margin: 0;
+  background-color: black;
+}
+
 .app {
- /*  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center; */
   margin: 0;
   padding: 0;
   background-color: black;
   color: white;
   height: 100vh;
-  
 }
-.main__list-characters{
+
+.main__list-characters {
   margin: 0;
   padding: 0 40px;
   display: grid;
@@ -20,16 +20,38 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-
 .box__name {
   background-color: rgb(0, 225, 255);
   width: 300px;
   text-decoration: none;
 }
+
+.link__characters {
+  text-decoration: none;
+  color: white;
+}
+
 .list__characters {
   list-style: none;
-  
+}
+.title__name {
+  margin: 15px;
+}
 
+.subtitle__name {
+  margin: 15px;
+}
+
+
+.input {
+  height: 50px;
+  width: 450px;
+  padding: 0;
+  margin: 45px 0 45px;
+  background-color: black;
+  border: 2px solid rgb(0, 225, 255);
+  color: white;
+  font-size: 24px;
 }
 
 .main__title {
@@ -39,22 +61,18 @@
   padding-top: 250px;
   height: 1px;
   overflow: hidden;
- /* display: flex;
- flex-direction: row;
- justify-content: center; */
-
-  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .detail__card {
   background-color: rgb(0, 225, 255);
-  margin:0;
-  /* width: 800px;
+  margin: 0;
+  width: 800px;
   
-  align-self: center; */
 }
 
-.return__app-back{
+.return__app-back {
   color: white;
-
 }
