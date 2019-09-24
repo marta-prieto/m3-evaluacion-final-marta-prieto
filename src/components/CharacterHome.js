@@ -14,7 +14,7 @@ const CharacterHome = props => {
       />
 
       <CharacterList
-        pokemones={characters}
+        characters={characters}
         queryData={queryData}
       />
     </React.Fragment>
