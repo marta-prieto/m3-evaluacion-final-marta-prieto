@@ -2,7 +2,7 @@ import React from 'react';
 import { fetchCharacters } from './services/fetchCharacters';
 import CharacterHome from './components/CharacterHome';
 import CharacterDetail from './components/CharacterDetail';
-import './App.css';
+import './App.scss';
 import { Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
