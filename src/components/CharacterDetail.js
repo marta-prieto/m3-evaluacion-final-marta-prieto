@@ -23,7 +23,7 @@ const CharacterDetail = props => {
     return (
       <React.Fragment>
         <div className="detail__card">
-          <h2 className="detail__name">Name: {name}</h2>
+          <h2 className="detail__name">{name}</h2>
           <div className="detail__image">
             <img src={image} alt={name} />
           </div>
@@ -32,14 +32,14 @@ const CharacterDetail = props => {
           <p className="detail__origin">Origin: {origin.name}</p>
           <p className="detail__status">Status: {status}</p>
         </div>
-        <Link to="/" className="return__app">VOLVER</Link>
+        {<Link to="/" className="return__app-back">VOLVER</Link>}
       </React.Fragment>
     )
   } else {
     return (
       <React.Fragment>
         <p>No está tu personaje</p>
-        <Link to="/" className="app__back">Volver</Link>
+        <Link to="/" className="back">Volver</Link>
       </React.Fragment>
     );
 
