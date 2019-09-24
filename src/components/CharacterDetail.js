@@ -6,11 +6,20 @@ import {Link} from 'react-router-dom';
 const CharacterDetail = props => {
 
   const {routerProps, characters} = props;
-  const charId = parseInt(routerProps.match.params.id);
+  const charId = parseInt(routerProps.match.params.charId);
 
-  const getMyCharacter = characters.filter(item => item.id === charId)
-  if (getMyCharacter > charId.length){
-  const {name, image, species, origin, episode, status} = characters[0];
+  if (charId > characters.length) {
+    return (
+      <div>
+      <p>No está tu personaje</p>
+      <Link to="/" className="return__app">VOLVER AL LISTADO</Link>
+      </div>
+    );
+}
+
+  const character = characters.filter(item => item.id === charId);
+  if (character[0]){
+  const {name, image, species, origin, episode, status} = character[0];
   return(
     <React.Fragment>
       <div className="detail__card">
@@ -19,8 +28,8 @@ const CharacterDetail = props => {
           <img src={image} alt={name}/>
         </div>
         <p className="detail__species">{species}</p>
-        <p className="detail__episode">{episode}</p>
-        <p className="detail__origin">{origin}</p>
+        <p className="detail__episode">{episode.length}</p>
+        <p className="detail__origin">{origin.name}</p>
         <p className="detail__status">{status}</p>
       </div>
       <Link to="/" className="return__app">VOLVER</Link>
@@ -44,16 +53,5 @@ const CharacterDetail = props => {
   
  export default CharacterDetail; 
 
-      /*   <ul className="poke-detail__types">
-          {types.map((type, index) => {
-            return (
-              <li className="poke-detail__type" key={index}>{type}</li>
-            );
-          })}
-        </ul>
-      </div>
-      <Link to="/" className="app__back">Volver al listado</Link>
-    </React.Fragment>
-  ); */
 
 
