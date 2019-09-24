@@ -23,14 +23,14 @@ const CharacterDetail = props => {
   return(
     <React.Fragment>
       <div className="detail__card">
-        <h2 className="detail__name">{name}</h2>
-        <div className="detail__image">
+        <h2 className="detail__name">Name: {name}</h2>
+        <div className="detail__image"> 
           <img src={image} alt={name}/>
         </div>
-        <p className="detail__species">{species}</p>
-        <p className="detail__episode">{episode.length}</p>
-        <p className="detail__origin">{origin.name}</p>
-        <p className="detail__status">{status}</p>
+        <p className="detail__species">Specie: {species}</p>
+        <p className="detail__episode">Number of Episodes: {episode.length}</p>
+        <p className="detail__origin">Origin: {origin.name}</p>
+        <p className="detail__status">Status: {status}</p>
       </div>
       <Link to="/" className="return__app">VOLVER</Link>
     </React.Fragment>
