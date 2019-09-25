@@ -11,10 +11,12 @@ class App extends React.Component {
 
     this.state = {
       characters: [],
-      queryData: ''
+      queryData: '',
+      gender: 'all'
     }
     this.getCharacters = this.getCharacters.bind(this);
     this.getQueryData = this.getQueryData.bind(this);
+    this.getFilter = this.getFilter.bind(this);
   }
   componentDidMount() {
     this.getCharacters();
@@ -35,9 +37,15 @@ class App extends React.Component {
       queryData: queryData
     });
   }
+  getFilter(event) {
+    const newGender = event.currentTarget.value;
+    this.setState({
+      gender: newGender
+    });
+  }
 
   render() {
-    const { characters, queryData } = this.state;
+    const { characters, queryData, gender } = this.state;
     return (
       <div className="app">
         <h1 className="main__title">Rick and Morty</h1>
@@ -48,6 +56,8 @@ class App extends React.Component {
                 getQueryData={this.getQueryData}
                 queryData={queryData}
                 characters={characters}
+                gender={gender}
+                getFilter={this.getFilter}
               />
             );
           }} />
